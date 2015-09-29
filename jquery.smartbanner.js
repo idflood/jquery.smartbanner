@@ -88,6 +88,13 @@
             this.options.onClose = function() {};
         }
 
+        // Set default onClose callback if not set in options
+        if (typeof this.options.onShow === 'function') {
+            this.options.onShow = this.options.onShow;
+        } else {
+            this.options.onShow = function() {};
+        }
+
         // Create banner
         this.create()
         this.show()
@@ -176,6 +183,7 @@
                     banner.slideDown(this.options.speedIn).addClass('shown');
                 }
             }
+            this.options.onShow(e);
         }
 
       , hide: function(callback) {
