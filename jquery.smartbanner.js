@@ -183,7 +183,7 @@
                     banner.slideDown(this.options.speedIn).addClass('shown');
                 }
             }
-            this.options.onShow(e);
+            this.options.onShow();
         }
 
       , hide: function(callback) {
